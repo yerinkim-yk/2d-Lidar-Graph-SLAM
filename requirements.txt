@@ -1,0 +1,8 @@
+# Tested with Python 3.11
+# open3d 0.18 is built against numpy 1.x (numpy 2.x segfaults in Vector3dVector)
+numpy==1.26.4
+scipy==1.15.3
+scikit-learn==1.6.1
+matplotlib==3.9.4
+pandas<2.3
+open3d==0.18.0
