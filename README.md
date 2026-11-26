@@ -3,6 +3,30 @@
 A graph-based SLAM implementation for 2D LiDAR in Python.
 It estimates the robot trajectory with grid-based scan matching, detects loop closures, and corrects the trajectory with pose graph optimization.
 
+## Overall Process
+
+1. Process raw data
+2. Occupancy Grid Map SLAM
+3. Loop detection
+4. Graph optimization
+
+## Results
+
+Results on 2D LiDAR data from the Seoul National University Library.
+
+### Initial scan
+
+![Initial scan](images/initial_scan.png)
+
+Occupancy grid map built from scan matching (magenta: map points, blue: current scan, green: estimated trajectory).
+
+### Loop detection and optimization
+
+![Loop detection and optimization](images/loop_detection_optimization.png)
+
+Left: trajectory with detected loop closures (×: pose estimated by loop closure matching, red: current pose, magenta: matched past pose).
+Right: trajectory after pose graph optimization.
+
 ## Structure
 
 | File | Description |
@@ -25,6 +49,7 @@ Tested with Python 3.11. Versions are pinned because open3d 0.18 is built agains
 
 ## Data
 
+2D LiDAR data from the Seoul National University Library (default dataset).
 Datasets are not included in this repository. Create a `data/` folder and place the files below in it.
 Select the dataset with the argument of `ReadData(n)` in `laserSLAM.py`.
 
